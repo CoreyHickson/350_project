@@ -1,0 +1,180 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+$font-stack:    Tahoma, Geneva, sans-serif;
+$primary-color: #FFF;
+$secondary-color: #000;
+$link-color: #8082aa;
+$media-max: 820px;
+$media-min: 819px;
+
+body {
+  color: $primary-color;
+  background-color: $secondary-color;
+  
+  background: url("../assets/dnd_phb_art.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#forms {
+  width: 100%;
+  display: inline-block;
+  margin: 3%;
+}
+
+#header {
+  color: $secondary-color;
+  background-color: $primary-color;
+  
+  h1 {
+    text-align: center;
+
+    padding-left: 3%;
+    padding-right: 3%;
+    
+    @media (max-width: $media-max) {
+      font: 300% $font-stack;
+      padding-top: 7%;
+      padding-bottom: 12%;
+    }
+    @media (min-width: $media-min) {
+      font: 400% $font-stack;
+      padding-top: 56px;
+      padding-bottom: 72px;
+    }
+  }
+  
+  #h-image {
+    position: relative;
+    width: 17%;
+    height: auto;
+    
+    @media (max-width: $media-max) {
+      width: 100px;
+    }
+    @media (min-width: $media-min) {
+      width: 150px;
+    }
+  }
+}
+
+#nav {
+  #nav-bar {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background: none;
+  }
+  #nav-button {
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 120%;
+    padding: 1.5%;
+
+    a {
+      text-decoration: none;
+      color: $link-color;
+      font-weight: 700;
+      text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+    }
+    
+    a:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+#footer {
+  font: 100% $font-stack;
+  color: $primary-color;
+  text-align: center;
+  clear:left;
+  padding: 5% 0 0 5%;
+}
+
+#home-image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 50%;
+}
+
+.json-text {
+    min-width:500px;
+    max-width:500px;
+    text-align:justify;
+    margin:0 auto;
+}
+
+/* Style from http://cssdeck.com/labs/striped-business-card*/
+@import url(http://fonts.googleapis.com/css?family=The+Girl+Next+Door);
+
+#bcbg {
+  width:450px;
+  height:250px;
+  background:transparent url(http://colourlovers.com.s3.amazonaws.com/images/patterns/3925/3925858.png?1381698366)repeat bottom right;padding:15px;font-family: 'Ubuntu', sans-serif;
+}
+.container {background:#222627; width:445px;height:245px;border:2px dotted #1ba9cc;font-family: 'Ubuntu', sans-serif;}
+.line1 {font-family: 'The Girl Next Door', cursive;font-size:29px;color:#fff;margin:8px;}
+.line2 {font-family: 'Ubuntu', sans-serif;font-size:15px;color:#fff;margin:-8px 0 0 9px;}
+.contact {font-family: 'Ubuntu', sans-serif;color:#fff;width:250px;height:65px;margin:75px 0 0 9px;padding:5px;}
+.logo {width:125px;height:130px;float:right;margin:-219px 10px 0 0;text-align:center;}
+
+
+/* Based off of styles from http://www.sanwebe.com/2014/08/css-html-forms-designs
+ and http://codepen.io/rexkirby/pen/Fdnlz*/
+#contact {
+  float: left;
+  margin: 0 auto; 
+  width: 400px;
+  font: 1em $font-stack;
+  background: #451212;
+  padding: 30px 30px 30px 50px; 
+  border: 5px solid #342323;  
+  #name, #level, #race, #class, #subrace, #background {
+    background: #c73333;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    width: 350px;
+  }
+  #submit {
+    background: #c73333;
+    padding: 14px 16px 8px 16px;
+    border: none;
+  }
+  #submit:active {
+    background: #c73333;
+    border:2px dotted #1ba9cc;
+  }
+}
+
+#right_col {
+  text-align: center;
+}
+
+#character_display {
+  text-align: left;
+  float: right;
+  clear: right;
+  margin: 5% 5% 5% 1%; 
+  width: 35%;
+  font: 1em $font-stack;
+  background: #451212;
+  padding: 30px 30px 30px 30px; 
+  border: 5px solid #342323; 
+}
+
+#char_title {
+  position: relative;
+  font: 1.5em $font-stack;
+  align: center;
+  padding-left: 10px;
+  margin-left: 10px;
+}

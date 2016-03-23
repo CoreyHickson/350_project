@@ -1,0 +1,15 @@
+!SESSION 2016-03-19 20:39:19.375 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-03-19 20:39:24.977
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.aptana.core 1 0 2016-03-19 20:39:26.353
+!MESSAGE (Build 3.6.1.201410201044) [INFO] com.aptana.core/debug/extension_points Geting Extension Point for com.aptana.scripting and extensionPoint applicationBundlePaths from org.eclipse.core.internal.registry.ExtensionRegistry@135f4c1
+
+!ENTRY com.aptana.core 1 0 2016-03-19 20:39:26.353
+!MESSAGE (Build 3.6.1.201410201044) [INFO] com.aptana.core/debug/extension_points Geting Extension Point for com.aptana.projects and extensionPoint projectTemplates from org.eclipse.core.internal.registry.ExtensionRegistry@135f4c1
