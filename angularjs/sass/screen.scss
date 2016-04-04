@@ -1,0 +1,159 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+$font-stack:    ScalaSans Caps, Tahoma, Geneva, sans-serif;
+$primary-color: #FFF;
+$secondary-color: #000;
+$media-max: 820px;
+$media-min: 819px;
+
+body {
+  background: url("../img/dnd_phb_art.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#header {
+  h1 {
+    text-align: center;
+    font: 400% $font-stack;
+  }
+  
+  #logo {
+    @media (max-width: $media-max) {
+      width: 300px;
+    }
+    @media (min-width: $media-min) {
+      width: 36.6%;
+    }
+  }
+
+  p {
+  	background-color: $primary-color;
+  	width: auto;
+  	padding: 2%;
+  }
+}
+
+#footer {
+  font: 150% $font-stack;
+  color: $primary-color;
+  text-align: center;
+  padding: 1em 0 1em 0;
+}
+
+#nav_form {
+    @media (max-width: 700px) {
+      width: 80%;
+    }
+    @media (min-width: 699px) {
+      width: 560px;
+    }
+}
+
+.char_form {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: rgba(0,0,0,0.7);
+  width: 25em;
+  margin: 2em auto;
+  
+  text-align: center;
+
+  .input {
+    width: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 6px 6px 6px 12px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin: 1%;
+  }
+
+  .input:focus {
+      width: 90%;
+  }
+
+  .button {
+    width: 100px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 6px 6px 6px 6px;
+    margin: 1em 1em 1.5em 1em;
+  }
+
+  .button:active {
+    background-color: #6fc184;
+    border-color: #6fc184;
+    -webkit-transform:scale(.95); /* Safari and Chrome */
+    -moz-transform:scale(.95); /* Firefox */
+    -ms-transform:scale(.95); /* IE 9 */
+    -o-transform:scale(.95); /* Opera */
+     transform:scale(.95);
+  }
+  
+  p {
+    padding: 0 0 1em 0;
+  }
+}
+
+.char_block {
+  padding: 0.5em;
+  background-color: rgba(0,0,0,0.7);
+  width: 25em;
+  margin: 2em auto;
+  
+  text-align: center;
+
+  .char_title {
+    font: 130% $font-stack;
+    color: $primary-color;
+    text-align: left;
+    text-indent: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+  .char_entry {
+    font: 100% $font-stack;
+    color: $secondary-color;
+    text-align: left;
+    text-indent: 1em;
+
+    width: 23em;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 6px 6px 6px 6px;
+    margin: 1em 1em 1.5em 1em;
+  }
+}
+
+.facebook_login {
+  padding: 0.5em;
+  text-align: center;
+
+  font: 130% $font-stack;
+  color: $primary-color;
+}

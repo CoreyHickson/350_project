@@ -1,0 +1,42 @@
+<div class="char_form">
+  <form novalidate>
+    <br>
+    <p class="char_title">Character Edit</p>
+    Character Number<br>
+    <input type="number" ng-model="put_character.charnum" class="input"><br><br>
+    Name<br>
+    <input type="text" ng-model="put_character.name" class="input"><br>
+    Class<br>
+    <select ng-model="put_character.class" class="input">
+      <option value="Barbarian">Barbarian</option>
+      <option value="Bard">Bard</option>
+      <option value="Cleric">Cleric</option>
+      <option value="Druid">Druid</option>
+      <option value="Fighter">Fighter</option>
+    </select><br>
+    Background<br>
+    <select ng-model="put_character.background" class="input">
+      <option value="Acolyte">Acolyte</option>
+      <option value="Charlatan">Charlatan</option>
+      <option value="Criminal">Criminal</option>
+      <option value="Entertainer">Entertainer</option>
+      <option value="Hermit">Hermit</option>
+    </select><br>
+    Race<br>
+    <select ng-model="put_character.race" class="input">
+      <option value="Dragonborn">Dragonborn</option>
+      <option value="Dwarf">Dwarf</option>
+      <option value="Elf">Elf</option>
+      <option value="Gnome">Gnome</option>
+      <option value="Half-Elf">Half-Elf</option>
+      <option value="Half-Orc">Half-Orc</option>
+      <option value="Halfing">Halfing</option>
+      <option value="Human">Human</option>
+      <option value="Tiefling">Tiefling</option>
+    </select><br>
+    Level<br>
+    <input type="number" ng-model="put_character.level" min="1" max="20" class="input"><br>
+    <input type="submit" ng-click="put(put_character)" value="submit" class="button" />
+    <p class="char_title">{{ put_status.status }}<p>
+  </form>
+</div><!-- /char_form -->

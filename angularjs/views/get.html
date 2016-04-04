@@ -1,0 +1,22 @@
+<div class="char_form">
+  <form novalidate>
+    <br>
+    <p class="char_title">Character Name Search</p>
+    <input type="input" ng-model="name" class="input"><br>
+    <input type="submit" ng-click="getchar(name)" value="Get" class="button" /><br>
+  </form>
+</div><!-- /char_form -->
+
+
+<div ng-repeat="character in characters">
+  <div class="char_block">
+    <p class="char_title">Character Number {{ character.id }}</p>
+    <p class="char_title">{{ character.name }}, a level {{ character.charlevel }} {{ character.race }} {{ character.class }}</p>
+    <p class="char_title">Stats</p>
+    <p class="char_entry">Primary ability {{ character.primary_ability}}, {{ character.charlevel }}{{ character.hit_die }} hit die, {{ character.size }} size, {{ character.base_speed }}ft speed</p>
+    <p class="char_title">Background</p>
+    <p class="char_entry">{{ character.background }}, proficient in {{ character.proficiency }}</p>
+    <p class="char_title">{{ character.feature }}</p>
+    <p class="char_entry">{{ character.description }}</p>
+  </div><!-- /char_block -->
+</div><!-- /ng-repeat -->

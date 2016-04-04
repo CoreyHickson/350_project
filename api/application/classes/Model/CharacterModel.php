@@ -4,6 +4,28 @@ class Model_CharacterModel extends Model {
 
 	public function getAll() {
 		try {
+			$db = Database::instance();
+			$query = DB::query(Database::SELECT,
+				'SELECT *
+					FROM characters
+				    	JOIN backgrounds
+				        	ON characters.background = backgrounds.background
+				        JOIN classes
+				        	ON characters.class = classes.class
+				        JOIN class_features
+				        	ON characters.class = class_features.class
+				        JOIN races
+				        	ON characters.race = races.race;');
+			$results = $query->execute();
+			$data = $results->as_array();
+			return array('Characters' => $data);
+		}
+		catch (ORM_Validation_Exception $e) {
+			return array('status' => $e->errors());
+		}
+
+/*		This is old code which gets a single table.
+		try {
 			$iterator = ORM::factory('Character')
                 ->find_all()
                 ->as_array();
@@ -14,17 +36,40 @@ class Model_CharacterModel extends Model {
 			foreach ($iterator as $character) {
 				$data[] = $character->as_array();
 			}
-
 			return array('Characters' => $data);
 		}
 		catch (ORM_Validation_Exception $e) {
 			return array(
 				'status' => $e->errors()
 			);
-		}
+		}*/
 	}
 
 	public function get($name) {
+		try {
+			$db = Database::instance();
+			$query = DB::query(Database::SELECT,
+				'SELECT *
+					FROM characters
+				    	JOIN backgrounds
+				        	ON characters.background = backgrounds.background
+				        JOIN classes
+				        	ON characters.class = classes.class
+				        JOIN class_features
+				        	ON characters.class = class_features.class
+				        JOIN races
+				        	ON characters.race = races.race
+				    WHERE characters.name = :name;');
+			$query->param(':name', $name);
+			$results = $query->execute();
+			$data = $results->as_array();
+			return array('Characters' => $data);
+		}
+		catch (ORM_Validation_Exception $e) {
+			return array('status' => $e->errors());
+		}
+
+/*		This is old code which only works on a single table.
 		try {
 			$iterator = ORM::factory('Character')
 				->where('name', '=', $name)
@@ -49,10 +94,10 @@ class Model_CharacterModel extends Model {
         {
 
             return array(
-                'status' => 'Parametre no Exist',
+                'status' => 'No parameter',
                 'cod'    => 'PARNEXS',
             );
-        }
+        }*/
 	}
 
 	public function create($params) {

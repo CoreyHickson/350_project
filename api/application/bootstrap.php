@@ -103,7 +103,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  expose      set the X-Powered-By header                        FALSE
  */
 Kohana::init(array(
-	'base_url' => '/',
+	'base_url' => '/api/',
 ));
 
 /**
@@ -145,14 +145,14 @@ Kohana::modules(array(
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-Route::set('profile', '(<controller>/characters(/<name>))')
+Route::set('profile', 'characters(/<name>)')
 	->defaults(array(
-		'controller' => 'api',
+		'controller' => 'Api',
 		'action'     => 'index',
 		'format'	 => 'json',
 	));
 
-Route::set('default', '(<controller>/characters(/<name>(/<class>(/<charlevel>(/<background>(/<race>))))))(.<format>)',
+Route::set('default', 'characters(/<name>(/<class>(/<charlevel>(/<background>(/<race>)))))(.<format>)',
     array(
         'format'  		=> '(json|xml|csv|html)',
         'name' 			=> '[^/,;?]++',
@@ -163,8 +163,15 @@ Route::set('default', '(<controller>/characters(/<name>(/<class>(/<charlevel>(/<
     ))
     ->defaults(array(
         'format' => 'json',
-        'controller' => 'api',
+        'controller' => 'Api',
         'action' => 'index',
     ));
+
+// Route::set('default', 'characters')
+// 	->defaults(array(
+// 		'controller' => 'Api',
+// 		'action'     => 'index',
+// 		'format'	 => 'json',
+// 	));
 
 define('SITE_NAME', 'API');
