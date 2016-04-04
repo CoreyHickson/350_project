@@ -5,6 +5,8 @@ app.controller('CreateController', ['$scope', '$http', '$log', function($scope, 
      *   http://localhost/api/characters/?name=Name&charlevel=1&class=Barbarian&background=Acolyte&race=Human
 	 */
 	$scope.create = function(character) {
+        $scope.character.name = document.getElementById("character.name").value;
+
         var $url = '/api/characters/?';
         $url = $url + 'name=' + $scope.character['name']
         		   + '&class=' +  $scope.character['class']

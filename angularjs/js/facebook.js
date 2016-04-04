@@ -71,10 +71,28 @@ window.fbAsyncInit = function() {
 // successful.  See statusChangeCallback() for when this call is made.
 function testAPI() {
   console.log('Welcome!  Fetching your information.... ');
+  
   FB.api('/me', function(response) {
     console.log('Successful login for: ' + response.name);
     document.getElementById('status').innerHTML =
       'Thanks for logging in, ' + response.name + '!';
     document.getElementById("character.name").value = response.name;
   });
+
+
+  // // return FB.api('/me', {fields: 'name'}, function(response) {
+  // //   return reponse.name;
+  // // });
+  // return FB.api('/me', function(response) {
+  //   console.log('Successful login for: ' + response.name);
+  //   document.getElementById('status').innerHTML =
+  //     'Thanks for logging in, ' + response.name + '!';
+  //   document.getElementById("character.name").value = response.name;
+    
+  //   var appElement = document.querySelector('[ng-app=myApp]');
+  //   var $scope = angular.element(appElement).scope();
+
+  //   $scope.character = {'name': response.name};
+
+  // });
 }
